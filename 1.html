@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test XSS</title>
+</head>
+<body>
+    <script>
+        // Thay đổi hình nền của trang
+        document.body.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKGWC8albPi-hyi8ZJlxBEaLwSbXULXP05Jw&s')";
+
+        // Tạo một phần tử div để chứa văn bản
+        var textDiv = document.createElement('div');
+        textDiv.textContent = 'Hacker By Séc Trum An Xin';
+        textDiv.style.position = 'fixed';
+        textDiv.style.top = '50%';
+        textDiv.style.left = '50%';
+        textDiv.style.transform = 'translate(-50%, -50%)';
+        textDiv.style.color = 'white';
+        textDiv.style.fontSize = '24px';
+        textDiv.style.fontWeight = 'bold';
+        textDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        textDiv.style.padding = '10px';
+        textDiv.style.borderRadius = '8px';
+        textDiv.style.zIndex = '10000';
+
+        // Thêm phần tử văn bản vào body
+        document.body.appendChild(textDiv);
+    </script>
+</body>
+</html>
